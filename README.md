@@ -18,7 +18,7 @@ This tool must be compiled with C++17 standard support.
 ```
 ![](./runAssembly.png)
 
-[demo](https://www.youtube.com/watch?v=I_lFJISol0Q)
+[![Demo](https://img.youtube.com/vi/I_lFJISol0Q/hqdefault.jpg)](https://www.youtube.com/watch?v=I_lFJISol0Q)
 
 ### Options
 
