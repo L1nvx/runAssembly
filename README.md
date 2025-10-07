@@ -18,7 +18,7 @@ This tool must be compiled with C++17 standard support.
 ```
 ![](./runAssembly.png)
 
-![](./gif.gif)
+![](https://www.youtube.com/watch?v=I_lFJISol0Q)
 
 ### Options
 
