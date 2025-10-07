@@ -22,7 +22,6 @@
 using namespace mscorlib;
 
 BOOL ExecuteAssembly(
-    std::string& out,
     const std::vector<uint8_t>& asmBytes,
     const std::vector<std::string>& args
 );
